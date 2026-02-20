@@ -6,6 +6,8 @@ Splitter performs active detection of header injection primitives that can lead 
 
 The project is written in Java using the Burp Extender API and built with Gradle Kotlin DSL.
 
+![Splitter UI](./images/1.png)
+
 
 ## Contents
 * [Overview](#overview)
@@ -29,6 +31,8 @@ Splitter automates detection by:
 - Analyzing raw response boundaries
 - Detecting header injection and response splitting behavior
 - Reporting issues using Burp’s native issue interface
+
+![Splitter UI](./images/2.png)
 
 Core implementation lives under src/main/java
 .
@@ -63,17 +67,16 @@ To load the JAR file into Burp:
 
 ## Features
 
+![Splitter UI](./images/3.png)
+
 - Active CRLF Injection Testing
 Injects controlled carriage return and line feed sequences to test improper input handling.
 
 - Raw HTTP Response Analysis
 Inspects response boundaries at the protocol level rather than relying solely on parsed header abstractions.
-Reference:
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages
 
 - Header Injection Detection
 Identifies injected or duplicated headers resulting from improper sanitization.
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
 
 - Response Splitting Identification
 Detects cases where injected CRLF sequences cause unintended header/body separation.
